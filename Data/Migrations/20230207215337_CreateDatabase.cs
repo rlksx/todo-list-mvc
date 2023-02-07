@@ -18,7 +18,8 @@ namespace todo_list_mvc.Data.Migrations
                     Title = table.Column<string>(type: "TEXT", nullable: false),
                     Done = table.Column<bool>(type: "INTEGER", nullable: false),
                     CreateAt = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    LastUpdateDate = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    LastUpdateDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    User = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {

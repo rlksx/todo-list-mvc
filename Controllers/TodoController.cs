@@ -56,10 +56,11 @@ namespace todo_list_mvc
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Done,CreateAt,LastUpdateDate")] Todo todo)
+        public async Task<IActionResult> Create([Bind("Id,Title,Done,CreateAt,LastUpdateDate,User")] Todo todo)
         {
             if (ModelState.IsValid)
             {
+                todo.User = User.Identity.Name;
                 _context.Add(todo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -88,7 +89,7 @@ namespace todo_list_mvc
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Done,CreateAt,LastUpdateDate")] Todo todo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Done,CreateAt,LastUpdateDate,User")] Todo todo)
         {
             if (id != todo.Id)
             {

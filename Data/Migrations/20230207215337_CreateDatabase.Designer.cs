@@ -11,7 +11,7 @@ using todo_list_mvc.Data;
 namespace todo_list_mvc.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230207205117_CreateDatabase")]
+    [Migration("20230207215337_CreateDatabase")]
     partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,6 +231,10 @@ namespace todo_list_mvc.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("User")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

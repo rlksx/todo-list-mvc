@@ -19,4 +19,7 @@ public class Todo
 
     [DisplayName("Última atualização")]
     public DateTime LastUpdateDate { get; set; } = DateTime.Now;
+
+    [DisplayName("Usuário")]
+    public string User { get; set; }
 }

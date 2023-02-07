@@ -13,4 +13,3 @@ public class ApplicationDbContext : IdentityDbContext
     
     public DbSet<Todo> Todos { get; set; }
 }
- 
